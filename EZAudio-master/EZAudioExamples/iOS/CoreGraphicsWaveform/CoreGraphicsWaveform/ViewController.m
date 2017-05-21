@@ -92,7 +92,10 @@
     //
     // Plot type
     //
-    self.audioPlot.plotType = EZPlotTypeBuffer;
+//    self.audioPlot.plotType = EZPlotTypeBuffer;
+    self.audioPlot.plotType = EZPlotTypeRolling;
+    self.audioPlot.shouldFill = YES;
+    self.audioPlot.shouldMirror = YES;
 
     //
     // Create the microphone
@@ -171,10 +174,12 @@
     switch (selectedSegment)
     {
         case 0:
-            [self drawBufferPlot];
+//            [self drawBufferPlot];
+            [self drawRollingPlot];
             break;
         case 1:
-            [self drawRollingPlot];
+//            [self drawRollingPlot];
+            [self drawBufferPlot];
             break;
         default:
             break;
