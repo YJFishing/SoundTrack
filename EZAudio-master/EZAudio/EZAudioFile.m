@@ -182,7 +182,7 @@ typedef struct
 
 + (Float64)defaultClientFormatSampleRate
 {
-    return 44100.0f;
+    return 8000.0f;
 }
 
 //------------------------------------------------------------------------------
@@ -391,7 +391,7 @@ typedef struct
 
 - (AudioStreamBasicDescription)floatFormat
 {
-    return [EZAudioUtilities stereoFloatNonInterleavedFormatWithSampleRate:44100.0f];
+    return [EZAudioUtilities stereoFloatNonInterleavedFormatWithSampleRate:8000.0f];
 }
 
 //------------------------------------------------------------------------------

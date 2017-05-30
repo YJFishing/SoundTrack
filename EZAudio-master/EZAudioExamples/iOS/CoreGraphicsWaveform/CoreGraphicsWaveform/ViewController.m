@@ -83,7 +83,6 @@
     // Background color
     //
     self.audioPlot.backgroundColor = [UIColor colorWithRed:0.984 green:0.471 blue:0.525 alpha:1.0];
-
     //
     // Waveform color
     //

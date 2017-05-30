@@ -33,7 +33,7 @@
 //------------------------------------------------------------------------------
 
 UInt32  const EZOutputMaximumFramesPerSlice = 4096;
-Float64 const EZOutputDefaultSampleRate     = 44100.0f;
+Float64 const EZOutputDefaultSampleRate     = 8000;
 
 //------------------------------------------------------------------------------
 #pragma mark - Data Structures
