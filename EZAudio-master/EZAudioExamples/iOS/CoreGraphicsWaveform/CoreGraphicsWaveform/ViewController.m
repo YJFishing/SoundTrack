@@ -304,7 +304,10 @@ withNumberOfChannels:(UInt32)numberOfChannels
     // when configuring the EZRecorder or telling another component what
     // audio format type to expect.
     //
+ 
+    audioStreamBasicDescription.mSampleRate = 8000.0f;
     [EZAudioUtilities printASBD:audioStreamBasicDescription];
+    
 }
 
 //------------------------------------------------------------------------------
