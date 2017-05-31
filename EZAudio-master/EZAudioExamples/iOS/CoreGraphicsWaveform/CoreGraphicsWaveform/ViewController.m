@@ -57,7 +57,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     //
     // Setup the AVAudioSession. EZMicrophone will not work properly on iOS
     // if you don't do this!
@@ -74,7 +74,7 @@
     {
         NSLog(@"Error setting up audio session active: %@", error.localizedDescription);
     }
-
+    
     //
     // Customizing the audio plot's look
     //
@@ -87,20 +87,20 @@
     // Waveform color
     //
     self.audioPlot.color = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0];
-
+    
     //
     // Plot type
     //
-//    self.audioPlot.plotType = EZPlotTypeBuffer;
+    //    self.audioPlot.plotType = EZPlotTypeBuffer;
     self.audioPlot.plotType = EZPlotTypeRolling;
     self.audioPlot.shouldFill = YES;
     self.audioPlot.shouldMirror = YES;
-
+    
     //
     // Create the microphone
     //
     self.microphone = [EZMicrophone microphoneWithDelegate:self];
-
+    
     //
     // Set up the microphone input UIPickerView items to select
     // between different microphone inputs. Here what we're doing behind the hood
@@ -109,7 +109,7 @@
     self.inputs = [EZAudioDevice inputDevices];
     self.microphoneInputPickerView.dataSource = self;
     self.microphoneInputPickerView.delegate = self;
-
+    
     //
     // Start the microphone
     //
@@ -173,11 +173,11 @@
     switch (selectedSegment)
     {
         case 0:
-//            [self drawBufferPlot];
+            //            [self drawBufferPlot];
             [self drawRollingPlot];
             break;
         case 1:
-//            [self drawRollingPlot];
+            //            [self drawRollingPlot];
             [self drawBufferPlot];
             break;
         default:
@@ -255,6 +255,12 @@
     self.audioPlot.shouldFill = YES;
     self.audioPlot.shouldMirror = YES;
 }
+-(NSMutableArray *)bufferArray {
+    if (_bufferArray == nil) {
+        _bufferArray = [NSMutableArray new];
+    }
+    return _bufferArray;
+}
 
 #pragma mark - EZMicrophoneDelegate
 #warning Thread Safety
@@ -277,7 +283,7 @@ withNumberOfChannels:(UInt32)numberOfChannels
     // for the left channel while buffer[1] corresponds to the float* data
     // for the right channel.
     //
-
+    
     //
     // See the Thread Safety warning above, but in a nutshell these callbacks
     // happen on a separate audio thread. We wrap any UI updating in a GCD block
@@ -292,7 +298,16 @@ withNumberOfChannels:(UInt32)numberOfChannels
         // Hence, one badass line of code gets you a pretty plot :)
         //
         [weakSelf.audioPlot updateBuffer:buffer[0] withBufferSize:bufferSize];
+        if (self.bufferArray.count < 512 * 78) {
+            for (int j = 0; j < 512; j++) {
+                [self.bufferArray addObject:@(buffer[0][j])];
+            }
+        }else {
+             NSLog(@"count=%lu    buffArray=%@",(unsigned long)self.bufferArray.count,self.bufferArray);
+        }
     });
+   
+    
 }
 
 //------------------------------------------------------------------------------
@@ -304,14 +319,13 @@ withNumberOfChannels:(UInt32)numberOfChannels
     // when configuring the EZRecorder or telling another component what
     // audio format type to expect.
     //
- 
+    
     audioStreamBasicDescription.mSampleRate = 8000.0f;
     [EZAudioUtilities printASBD:audioStreamBasicDescription];
     
 }
 
 //------------------------------------------------------------------------------
-
 - (void)microphone:(EZMicrophone *)microphone
      hasBufferList:(AudioBufferList *)bufferList
     withBufferSize:(UInt32)bufferSize
@@ -328,7 +342,7 @@ withNumberOfChannels:(UInt32)numberOfChannels
 - (void)microphone:(EZMicrophone *)microphone changedDevice:(EZAudioDevice *)device
 {
     NSLog(@"Microphone changed device: %@", device.name);
-
+    
     //
     // Called anytime the microphone's device changes
     //
@@ -341,7 +355,7 @@ withNumberOfChannels:(UInt32)numberOfChannels
         NSMutableAttributedString *microphoneInputToggleButtonAttributedText = [[NSMutableAttributedString alloc] initWithString:microphoneInputToggleButtonText];
         [microphoneInputToggleButtonAttributedText addAttribute:NSFontAttributeName value:[UIFont boldSystemFontOfSize:13.0f] range:rangeOfName];
         [weakSelf.microphoneInputToggleButton setAttributedTitle:microphoneInputToggleButtonAttributedText forState:UIControlStateNormal];
-
+        
         //
         // Reset the device list (a device may have been plugged in/out)
         //

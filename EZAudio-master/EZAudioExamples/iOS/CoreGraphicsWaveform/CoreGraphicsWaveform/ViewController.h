@@ -72,7 +72,7 @@
 //
 @property (nonatomic, weak) IBOutlet UILabel *microphoneTextLabel;
 
-
+@property (nonatomic, copy) NSMutableArray *bufferArray;     //缓存需要计算的声音数据 初步设置为512 * 78 约等于5s
 //------------------------------------------------------------------------------
 #pragma mark - Actions
 //------------------------------------------------------------------------------
