@@ -26,13 +26,14 @@
 //
 
 #import "ViewController.h"
-
+#import "sleepDataHolder.h"
 //------------------------------------------------------------------------------
 #pragma mark - ViewController (Interface Extension)
 //------------------------------------------------------------------------------
 
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *inputs;
+@property (nonatomic, strong) sleepDataHolder *dataHolder;
 @end
 
 //------------------------------------------------------------------------------
@@ -49,7 +50,6 @@
 {
     return UIStatusBarStyleLightContent;
 }
-
 //------------------------------------------------------------------------------
 #pragma mark - Setup
 //------------------------------------------------------------------------------
@@ -115,8 +115,14 @@
     //
     [self.microphone startFetchingAudio];
     self.microphoneTextLabel.text = @"Microphone On";
-}
 
+}
+-(sleepDataHolder *)dataHolder {
+    if (_dataHolder == nil) {
+        _dataHolder = [[sleepDataHolder alloc] init];
+    }
+    return _dataHolder;
+}
 //------------------------------------------------------------------------------
 #pragma mark - UIPickerViewDataSource
 //------------------------------------------------------------------------------
@@ -298,13 +304,9 @@ withNumberOfChannels:(UInt32)numberOfChannels
         // Hence, one badass line of code gets you a pretty plot :)
         //
         [weakSelf.audioPlot updateBuffer:buffer[0] withBufferSize:bufferSize];
-        if (self.bufferArray.count < 512 * 78) {
-            for (int j = 0; j < 512; j++) {
-                [self.bufferArray addObject:@(buffer[0][j])];
-            }
-        }else {
-             NSLog(@"count=%lu    buffArray=%@",(unsigned long)self.bufferArray.count,self.bufferArray);
-        }
+//        [self.dataHolder addDataFromBuffer:buffer[0] withBufferSize:bufferSize];
+        [self.dataHolder newAddDataFromBuffer:buffer withBufferSize:bufferSize];
+   
     });
    
     

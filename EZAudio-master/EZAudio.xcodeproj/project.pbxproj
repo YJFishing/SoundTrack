@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390E6F061EDFC44C00F5962F /* sleepDataHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 390E6F041EDFC44C00F5962F /* sleepDataHolder.h */; };
+		390E6F071EDFC44C00F5962F /* sleepDataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E6F051EDFC44C00F5962F /* sleepDataHolder.m */; };
 		469F4D1E1B749FEC00666A46 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 469F4CFE1B749FEC00666A46 /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		469F4D1F1B749FEC00666A46 /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F4CFF1B749FEC00666A46 /* EZAudio.m */; };
 		469F4D201B749FEC00666A46 /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 469F4D001B749FEC00666A46 /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -76,6 +78,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		390E6F041EDFC44C00F5962F /* sleepDataHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sleepDataHolder.h; sourceTree = "<group>"; };
+		390E6F051EDFC44C00F5962F /* sleepDataHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sleepDataHolder.m; sourceTree = "<group>"; };
 		469F4CF31B749F7800666A46 /* EZAudioiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudioiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		469F4CF81B749F7800666A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469F4CFE1B749FEC00666A46 /* EZAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAudio.h; sourceTree = "<group>"; };
@@ -133,9 +137,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		390E6F031EDFC39600F5962F /* CoreEngine */ = {
+			isa = PBXGroup;
+			children = (
+				390E6F041EDFC44C00F5962F /* sleepDataHolder.h */,
+				390E6F051EDFC44C00F5962F /* sleepDataHolder.m */,
+			);
+			name = CoreEngine;
+			sourceTree = "<group>";
+		};
 		469F4CE91B749F7800666A46 = {
 			isa = PBXGroup;
 			children = (
+				390E6F031EDFC39600F5962F /* CoreEngine */,
 				469F4CF51B749F7800666A46 /* EZAudio */,
 				469F4CF41B749F7800666A46 /* Products */,
 			);
@@ -207,6 +221,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				390E6F061EDFC44C00F5962F /* sleepDataHolder.h in Headers */,
 				8A5A4BF41BBC025600A8A048 /* EZAudioiOS.h in Headers */,
 				469F4D301B749FEC00666A46 /* EZAudioPlotGL.h in Headers */,
 				469F4D2A1B749FEC00666A46 /* EZAudioFloatData.h in Headers */,
@@ -355,6 +370,7 @@
 				469F4D1F1B749FEC00666A46 /* EZAudio.m in Sources */,
 				469F4D3C1B749FEC00666A46 /* TPCircularBuffer.c in Sources */,
 				469F4D3B1B749FEC00666A46 /* EZRecorder.m in Sources */,
+				390E6F071EDFC44C00F5962F /* sleepDataHolder.m in Sources */,
 				469F4D311B749FEC00666A46 /* EZAudioPlotGL.m in Sources */,
 				469F4D331B749FEC00666A46 /* EZAudioUtilities.m in Sources */,
 				469F4D2B1B749FEC00666A46 /* EZAudioFloatData.m in Sources */,
@@ -580,6 +596,7 @@
 				8A5A4BAF1BBBDCB200A8A048 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
