@@ -39,7 +39,7 @@
         [self.bufferArray addObjectsFromArray:arrayTemp];
         [arrayTemp removeAllObjects];
     } else {
-        NSLog(@"count = %lu    bufferArray = %@",(unsigned long)self.bufferArray.count,self.bufferArray);
+//        NSLog(@"count = %lu    bufferArray = %@",(unsigned long)self.bufferArray.count,self.bufferArray);
         return _bufferArray;
     }
     return nil;
@@ -59,7 +59,10 @@
 //清除掉数据当中的错误数据
 -(NSMutableArray *)getRawDataFromArray:(NSMutableArray *)array {
     for (int i =0 ;i< array.count; i++) {
-        if ((NSInteger)array[i] < -10 || (NSInteger)array[i] > 10) {
+//        if ((NSInteger)array[i] < -0.00001 || (NSInteger)array[i] >100000 ) {
+//            [array removeObjectAtIndex:i];
+//        }
+        if (fabsf([array[i] floatValue]) > 5 || fabsf([array[i] floatValue]) < 0.000001) {
             [array removeObjectAtIndex:i];
         }
     }

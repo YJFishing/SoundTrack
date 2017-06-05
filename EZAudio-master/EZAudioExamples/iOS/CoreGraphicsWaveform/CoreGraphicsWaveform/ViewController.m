@@ -305,8 +305,11 @@ withNumberOfChannels:(UInt32)numberOfChannels
         //
         [weakSelf.audioPlot updateBuffer:buffer[0] withBufferSize:bufferSize];
 //        [self.dataHolder addDataFromBuffer:buffer[0] withBufferSize:bufferSize];
-        [self.dataHolder newAddDataFromBuffer:buffer withBufferSize:bufferSize];
-   
+        
+        NSMutableArray *rawArray = [self.dataHolder newAddDataFromBuffer:buffer withBufferSize:bufferSize];
+        self.dataHolder.buffer = buffer;
+        NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:rawArray];
+        NSLog(@"count = %lu   trueArray = %@",(unsigned long)trueArray.count,trueArray);
     });
    
     

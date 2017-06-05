@@ -10,7 +10,9 @@
 
 @interface sleepDataHolder : NSObject
 @property (nonatomic, copy) NSMutableArray *bufferArray;
+@property (nonatomic, assign) float **buffer;
 
 -(NSMutableArray *)addDataFromBuffer:(float *)buffer withBufferSize:(NSInteger)bufferSize;
 -(NSMutableArray *)newAddDataFromBuffer:(float **)buffer withBufferSize:(NSInteger)bufferSize;
+-(NSMutableArray *)getRawDataFromArray:(NSMutableArray *)array;
 @end
