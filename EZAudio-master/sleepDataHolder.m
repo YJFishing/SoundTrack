@@ -11,7 +11,7 @@
 @implementation sleepDataHolder
 -(NSMutableArray *)bufferArray {
     if (_bufferArray == nil) {
-        _bufferArray = [NSMutableArray new];
+        _bufferArray = [[NSMutableArray alloc] init];
     }
     return _bufferArray;
 }
@@ -47,9 +47,9 @@
 //- (void)setSampleData:(float *)data length:(int)length
 //{
 //    CGPoint *points = self.points;
-//    for (int i = 0; i < length; i++)
+//    for (int i = 0; i < length; i++)®
 //    {
-//        points[i].x = i;
+//        points[i].x = i;®
 //        points[i].y = data[i] * self.gain;
 //    }
 //    points[0].y = points[length - 1].y = 0.0f;
@@ -68,4 +68,6 @@
     }
     return array;
 }
+
+
 @end

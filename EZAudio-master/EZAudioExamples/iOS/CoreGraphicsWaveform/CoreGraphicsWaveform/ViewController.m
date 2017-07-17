@@ -309,7 +309,7 @@ withNumberOfChannels:(UInt32)numberOfChannels
         NSMutableArray *rawArray = [self.dataHolder newAddDataFromBuffer:buffer withBufferSize:bufferSize];
         self.dataHolder.buffer = buffer;
         NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:rawArray];
-        NSLog(@"count = %lu   trueArray = %@",(unsigned long)trueArray.count,trueArray);
+//        NSLog(@"count = %lu   trueArray = %@",(unsigned long)trueArray.count,trueArray);
     });
    
     
