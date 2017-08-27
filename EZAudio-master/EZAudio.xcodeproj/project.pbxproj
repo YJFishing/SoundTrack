@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		390E6F061EDFC44C00F5962F /* sleepDataHolder.h in Headers */ = {isa = PBXBuildFile; fileRef = 390E6F041EDFC44C00F5962F /* sleepDataHolder.h */; };
 		390E6F071EDFC44C00F5962F /* sleepDataHolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 390E6F051EDFC44C00F5962F /* sleepDataHolder.m */; };
+		3966F1EC1F531B0A00E48329 /* YJCalculateUtiles.h in Headers */ = {isa = PBXBuildFile; fileRef = 3966F1EA1F531B0A00E48329 /* YJCalculateUtiles.h */; };
+		3966F1ED1F531B0A00E48329 /* YJCalculateUtiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 3966F1EB1F531B0A00E48329 /* YJCalculateUtiles.m */; };
 		469F4D1E1B749FEC00666A46 /* EZAudio.h in Headers */ = {isa = PBXBuildFile; fileRef = 469F4CFE1B749FEC00666A46 /* EZAudio.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		469F4D1F1B749FEC00666A46 /* EZAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 469F4CFF1B749FEC00666A46 /* EZAudio.m */; };
 		469F4D201B749FEC00666A46 /* EZAudioDevice.h in Headers */ = {isa = PBXBuildFile; fileRef = 469F4D001B749FEC00666A46 /* EZAudioDevice.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -80,6 +82,8 @@
 /* Begin PBXFileReference section */
 		390E6F041EDFC44C00F5962F /* sleepDataHolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sleepDataHolder.h; sourceTree = "<group>"; };
 		390E6F051EDFC44C00F5962F /* sleepDataHolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = sleepDataHolder.m; sourceTree = "<group>"; };
+		3966F1EA1F531B0A00E48329 /* YJCalculateUtiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJCalculateUtiles.h; sourceTree = "<group>"; };
+		3966F1EB1F531B0A00E48329 /* YJCalculateUtiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJCalculateUtiles.m; sourceTree = "<group>"; };
 		469F4CF31B749F7800666A46 /* EZAudioiOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EZAudioiOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		469F4CF81B749F7800666A46 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		469F4CFE1B749FEC00666A46 /* EZAudio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZAudio.h; sourceTree = "<group>"; };
@@ -142,6 +146,8 @@
 			children = (
 				390E6F041EDFC44C00F5962F /* sleepDataHolder.h */,
 				390E6F051EDFC44C00F5962F /* sleepDataHolder.m */,
+				3966F1EA1F531B0A00E48329 /* YJCalculateUtiles.h */,
+				3966F1EB1F531B0A00E48329 /* YJCalculateUtiles.m */,
 			);
 			name = CoreEngine;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 				469F4D3D1B749FEC00666A46 /* TPCircularBuffer.h in Headers */,
 				469F4D3A1B749FEC00666A46 /* EZRecorder.h in Headers */,
 				469F4D321B749FEC00666A46 /* EZAudioUtilities.h in Headers */,
+				3966F1EC1F531B0A00E48329 /* YJCalculateUtiles.h in Headers */,
 				469F4D281B749FEC00666A46 /* EZAudioFloatConverter.h in Headers */,
 				469F4D241B749FEC00666A46 /* EZAudioFFT.h in Headers */,
 			);
@@ -371,6 +378,7 @@
 				469F4D3C1B749FEC00666A46 /* TPCircularBuffer.c in Sources */,
 				469F4D3B1B749FEC00666A46 /* EZRecorder.m in Sources */,
 				390E6F071EDFC44C00F5962F /* sleepDataHolder.m in Sources */,
+				3966F1ED1F531B0A00E48329 /* YJCalculateUtiles.m in Sources */,
 				469F4D311B749FEC00666A46 /* EZAudioPlotGL.m in Sources */,
 				469F4D331B749FEC00666A46 /* EZAudioUtilities.m in Sources */,
 				469F4D2B1B749FEC00666A46 /* EZAudioFloatData.m in Sources */,

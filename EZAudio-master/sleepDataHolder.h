@@ -15,4 +15,7 @@
 -(NSMutableArray *)addDataFromBuffer:(float *)buffer withBufferSize:(NSInteger)bufferSize;
 -(NSMutableArray *)newAddDataFromBuffer:(float **)buffer withBufferSize:(NSInteger)bufferSize;
 -(NSMutableArray *)getRawDataFromArray:(NSMutableArray *)array;
+
+//存放history Info
+- (NSMutableArray *)historyBufferWithBuffer:(float *)buffer bufferSize:(NSInteger)bufferSize;
 @end

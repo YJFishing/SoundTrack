@@ -34,6 +34,7 @@
 @interface ViewController ()
 @property (nonatomic, strong) NSArray *inputs;
 @property (nonatomic, strong) sleepDataHolder *dataHolder;
+@property (nonatomic, assign) EZPlotHistoryInfo *historyInfo;
 @end
 
 //------------------------------------------------------------------------------
@@ -115,7 +116,7 @@
     //
     [self.microphone startFetchingAudio];
     self.microphoneTextLabel.text = @"Microphone On";
-
+    
 }
 -(sleepDataHolder *)dataHolder {
     if (_dataHolder == nil) {
@@ -302,17 +303,13 @@ withNumberOfChannels:(UInt32)numberOfChannels
         // Internally the audio plot will handle all the drawing related code,
         // history management, and freeing its own resources.
         // Hence, one badass line of code gets you a pretty plot :)
-        //
         [weakSelf.audioPlot updateBuffer:buffer[0] withBufferSize:bufferSize];
-//        [self.dataHolder addDataFromBuffer:buffer[0] withBufferSize:bufferSize];
-        
-        NSMutableArray *rawArray = [self.dataHolder newAddDataFromBuffer:buffer withBufferSize:bufferSize];
-        self.dataHolder.buffer = buffer;
-        NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:rawArray];
+        //NSMutableArray *bufferArray = [self.dataHolder addDataFromBuffer:buffer[0] withBufferSize:bufferSize];
+//        NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:bufferArray];
 //        NSLog(@"count = %lu   trueArray = %@",(unsigned long)trueArray.count,trueArray);
+        
+        
     });
-   
-    
 }
 
 //------------------------------------------------------------------------------

@@ -25,6 +25,7 @@
 
 #import "EZAudioPlot.h"
 
+
 //------------------------------------------------------------------------------
 #pragma mark - Constants
 //------------------------------------------------------------------------------
@@ -50,6 +51,21 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
     free(self.points);
 }
 
+- (NSMutableArray *)bufferArray {
+    if (_bufferArray) {
+        return _bufferArray;
+    }
+    _bufferArray = [NSMutableArray new];
+    return _bufferArray;
+}
+
+- (NSMutableArray *)tempArray {
+    if (_tempArray) {
+        return _tempArray;
+    }
+    _tempArray = [NSMutableArray new];
+    return _tempArray;
+}
 //------------------------------------------------------------------------------
 #pragma mark - Initialization
 //------------------------------------------------------------------------------
@@ -157,7 +173,13 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
     // Override in subclass
     //
 }
-
+- (sleepDataHolder *)dataHolder {
+    if (_dataHolder){
+        return _dataHolder;
+    }
+    _dataHolder = [[sleepDataHolder alloc] init];
+    return _dataHolder;
+}
 //------------------------------------------------------------------------------
 #pragma mark - Setup
 //------------------------------------------------------------------------------
@@ -331,6 +353,9 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
             
             [self setSampleData:self.historyInfo->buffer
                          length:self.historyInfo->bufferSize];
+            self.bufferArray = [self.dataHolder historyBufferWithBuffer:self.historyInfo->buffer bufferSize:self.historyInfo->bufferSize];
+//            NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:_bufferArray];
+            
             break;
         default:
             break;
