@@ -18,7 +18,7 @@
     NSInteger target = 0;
     float result = 0.f;
     for (int j = 16000; j<= 320000; j++) {
-        for (int k = 0 ; k < array.count - 32000 -1;k++) {
+        for (int k = 0 ; k < array.count - 32000 -1;k=k+80) {
             float a = [array[k] floatValue];
             float b = [array[k + j] floatValue];
             float c = pow((a-b),2);
