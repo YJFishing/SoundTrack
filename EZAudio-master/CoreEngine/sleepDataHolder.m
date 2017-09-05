@@ -48,7 +48,7 @@
         [self.bufferArray addObjectsFromArray:arrayTemp];
         [arrayTemp removeAllObjects];
     } else {
-//        NSLog(@"count = %lu    bufferArray = %@",(unsigned long)self.bufferArray.count,self.bufferArray);
+        //        NSLog(@"count = %lu    bufferArray = %@",(unsigned long)self.bufferArray.count,self.bufferArray);
         return _bufferArray;
     }
     return nil;
