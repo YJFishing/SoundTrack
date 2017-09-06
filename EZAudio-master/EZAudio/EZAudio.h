@@ -50,6 +50,7 @@ FOUNDATION_EXPORT const unsigned char EZAudioVersionString[];
 #import "EZAudioDisplayLink.h"
 #import "EZAudioPlot.h"
 #import "EZAudioPlotGL.h"
+#import "sleepDataHolder.h"
 
 //------------------------------------------------------------------------------
 #pragma mark - Utility Components

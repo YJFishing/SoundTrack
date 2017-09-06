@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3971DB5D1F5E894700B20DCD /* YJsoundModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971DB5C1F5E894700B20DCD /* YJsoundModel.m */; };
+		3971DB6C1F5E8FA700B20DCD /* YJCalculateUtiles.m in Sources */ = {isa = PBXBuildFile; fileRef = 3971DB6B1F5E8FA700B20DCD /* YJCalculateUtiles.m */; };
 		66374E1C1C545A8A000B19D0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 66374E1B1C545A8A000B19D0 /* main.m */; };
 		66374E1F1C545A8A000B19D0 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 66374E1E1C545A8A000B19D0 /* AppDelegate.m */; };
 		66374E221C545A8A000B19D0 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66374E211C545A8A000B19D0 /* ViewController.m */; };
@@ -63,6 +65,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3971DB5B1F5E894700B20DCD /* YJsoundModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJsoundModel.h; sourceTree = "<group>"; };
+		3971DB5C1F5E894700B20DCD /* YJsoundModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJsoundModel.m; sourceTree = "<group>"; };
+		3971DB6A1F5E8FA700B20DCD /* YJCalculateUtiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YJCalculateUtiles.h; sourceTree = "<group>"; };
+		3971DB6B1F5E8FA700B20DCD /* YJCalculateUtiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YJCalculateUtiles.m; sourceTree = "<group>"; };
 		66374E171C545A8A000B19D0 /* CoreGraphicsWaveform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreGraphicsWaveform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66374E1B1C545A8A000B19D0 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		66374E1D1C545A8A000B19D0 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -88,6 +94,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3971DB691F5E8FA700B20DCD /* CoreEngine */ = {
+			isa = PBXGroup;
+			children = (
+				3971DB6A1F5E8FA700B20DCD /* YJCalculateUtiles.h */,
+				3971DB6B1F5E8FA700B20DCD /* YJCalculateUtiles.m */,
+			);
+			path = CoreEngine;
+			sourceTree = "<group>";
+		};
+		39B498CB1F5E874600AF0BDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3971DB5B1F5E894700B20DCD /* YJsoundModel.h */,
+				3971DB5C1F5E894700B20DCD /* YJsoundModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		66374E0E1C545A8A000B19D0 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +132,8 @@
 		66374E191C545A8A000B19D0 /* CoreGraphicsWaveform */ = {
 			isa = PBXGroup;
 			children = (
+				3971DB691F5E8FA700B20DCD /* CoreEngine */,
+				39B498CB1F5E874600AF0BDF /* Model */,
 				66374E1D1C545A8A000B19D0 /* AppDelegate.h */,
 				66374E1E1C545A8A000B19D0 /* AppDelegate.m */,
 				66374E201C545A8A000B19D0 /* ViewController.h */,
@@ -235,8 +261,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3971DB5D1F5E894700B20DCD /* YJsoundModel.m in Sources */,
 				66374E221C545A8A000B19D0 /* ViewController.m in Sources */,
 				66374E1F1C545A8A000B19D0 /* AppDelegate.m in Sources */,
+				3971DB6C1F5E8FA700B20DCD /* YJCalculateUtiles.m in Sources */,
 				66374E1C1C545A8A000B19D0 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,7 +396,7 @@
 				INFOPLIST_FILE = CoreGraphicsWaveform/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sha.CoreGraphicsWaveform;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sha.CoreGraphicsWaveformBao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -381,7 +409,7 @@
 				INFOPLIST_FILE = CoreGraphicsWaveform/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sha.CoreGraphicsWaveform;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sha.CoreGraphicsWaveformBao;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

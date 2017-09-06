@@ -27,7 +27,6 @@
 #import "EZPlot.h"
 #import "EZAudioDisplayLink.h"
 #import "sleepDataHolder.h"
-
 @class EZAudio;
 
 //------------------------------------------------------------------------------

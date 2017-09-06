@@ -24,8 +24,7 @@
 //  THE SOFTWARE.
 
 #import "EZAudioPlot.h"
-
-
+#import "YJCalculateUtiles.h"
 //------------------------------------------------------------------------------
 #pragma mark - Constants
 //------------------------------------------------------------------------------
@@ -34,7 +33,6 @@ UInt32 const kEZAudioPlotMaxHistoryBufferLength = 8192;
 UInt32 const kEZAudioPlotDefaultHistoryBufferLength = 800;
 UInt32 const EZAudioPlotDefaultHistoryBufferLength = 800;
 UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
-
 //------------------------------------------------------------------------------
 #pragma mark - EZAudioPlot (Implementation)
 //------------------------------------------------------------------------------
@@ -146,7 +144,7 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
     self.waveformLayer.opaque = YES;
     
 #if TARGET_OS_IPHONE
-    self.color = [UIColor colorWithHue:0 saturation:1.0 brightness:1.0 alpha:1.0]; 
+    self.color = [UIColor colorWithHue:0 saturation:1.0 brightness:1.0 alpha:1.0];
 #elif TARGET_OS_MAC
     self.color = [NSColor colorWithCalibratedHue:0 saturation:1.0 brightness:1.0 alpha:1.0];
     self.wantsLayer = YES;
@@ -286,8 +284,8 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
 //------------------------------------------------------------------------------
 
 - (CGPathRef)createPathWithPoints:(CGPoint *)points
-                  pointCount:(UInt32)pointCount
-                      inRect:(EZRect)rect
+                       pointCount:(UInt32)pointCount
+                           inRect:(EZRect)rect
 {
     CGMutablePathRef path = NULL;
     if (pointCount > 0)
@@ -353,11 +351,14 @@ UInt32 const EZAudioPlotDefaultMaxHistoryBufferLength = 8192;
             
             [self setSampleData:self.historyInfo->buffer
                          length:self.historyInfo->bufferSize];
-            self.bufferArray = [self.dataHolder historyBufferWithBuffer:self.historyInfo->buffer bufferSize:self.historyInfo->bufferSize];
-//            NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:_bufferArray];
             
-            break;
-        default:
+            self.bufferArray = [self.dataHolder historyBufferWithBuffer:self.historyInfo->buffer bufferSize:self.historyInfo->bufferSize];
+            if (self.bufferArray.count == 40256) {
+//                NSLog(@"trueArray = %@ count = %ld",trueArray,trueArray.count);
+                CGFloat time = [YJCalculateUtiles timesOfBreathInArray:self.bufferArray];
+                NSLog(@"time = %f",time);
+            }
+            
             break;
     }
     

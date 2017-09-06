@@ -14,7 +14,7 @@
 //  furnished to do so, subject to the following conditions:
 //
 //  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
+//  all copies or substantial portions of Modelthe Software.
 //
 //  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 //  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -26,7 +26,9 @@
 //
 
 #import "ViewController.h"
-#import "sleepDataHolder.h"
+#import "YJsoundModel.h"
+#import <EZAudio/EZAudio.h>
+
 //------------------------------------------------------------------------------
 #pragma mark - ViewController (Interface Extension)
 //------------------------------------------------------------------------------
@@ -304,11 +306,6 @@ withNumberOfChannels:(UInt32)numberOfChannels
         // history management, and freeing its own resources.
         // Hence, one badass line of code gets you a pretty plot :)
         [weakSelf.audioPlot updateBuffer:buffer[0] withBufferSize:bufferSize];
-        //NSMutableArray *bufferArray = [self.dataHolder addDataFromBuffer:buffer[0] withBufferSize:bufferSize];
-//        NSMutableArray *trueArray =  [self.dataHolder getRawDataFromArray:bufferArray];
-//        NSLog(@"count = %lu   trueArray = %@",(unsigned long)trueArray.count,trueArray);
-        
-        
     });
 }
 
